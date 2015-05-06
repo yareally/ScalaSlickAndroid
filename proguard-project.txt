@@ -1,0 +1,141 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+-dontwarn **$$anonfun$*
+-dontwarn com.cc.signalinfo**
+-dontwarn scala.**
+-dontwarn scala.beans.ScalaBeanInfo
+-dontwarn scala.collection.generic.GenTraversableFactory
+-dontwarn scala.collection.immutable.RedBlack$Empty
+-dontwarn scala.concurrent.forkjoin.**
+-dontwarn scala.reflect.**
+-dontwarn scala.sys.process.**
+-dontwarn scala.swing.**
+-dontwarn scala.concurrent.**
+-dontwarn scala.tools.**,plugintemplate.**
+
+-dontnote org.xml.sax.EntityResolver
+
+#(org.apache.james.mime4j.storage.StorageProvider)Class.forName(variable).newInstance()
+-dontnote org.apache.james.mime4j.storage.DefaultStorageProvider
+
+-dontwarn android.support.v4.util.MapCollections
+
+# disables annoying message about the compatibility library
+# http://stackoverflow.com/questions/22441366/note-android-support-v4-text-icucompatics-cant-find-dynamically-referenced-cl
+-dontnote android.support.**
+
+## Fixes ==> Warning: ... can't find referenced class sun.misc.Unsafe
+#-libraryjars "libs\scala-actors.jar";"libs\scala-library.jar"
+-dontwarn sun.misc.Unsafe
+-dontusemixedcaseclassnames
+-dontobfuscate
+-dontoptimize
+-dontpreverify
+
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers
+
+#scala.Enumeration accesses a field 'MODULE$' dynamically
+-dontnote scala.Enumeration
+
+#(org.xml.sax.EntityResolver)Class.forName(variable).newInstance()
+-dontnote org.xml.sax.EntityResolver
+
+#(org.apache.james.mime4j.storage.StorageProvider)Class.forName(variable).newInstance()
+-dontnote org.apache.james.mime4j.storage.DefaultStorageProvider
+
+-keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,Annotation,EnclosingMethod
+
+
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class com.android.vending.licensing.ILicensingService
+
+# admob stuff
+-keep class com.google.android.gms.ads.** # Don't proguard AdMob classes
+-dontwarn com.google.android.gms.ads.** # Temporary workaround for v6.2.1. It gives a warning that you can ignore
+
+-keepclasseswithmembernames, includedescriptorclasses class * {
+    native <methods>;
+}
+
+-keepclasseswithmembernames class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembernames class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+-keepclassmembers class * extends com.actionbarsherlock.ActionBarSherlock {
+    <init>(android.app.Activity, int);
+}
+
+# fixes https://issues.scala-lang.org/browse/SI-5397
+-keep class scala.collection.SeqLike {
+    public protected *;
+}
+
+-keep class org.sqlite.database.sqlite.SQLiteCustomFunction {
+    public protected private *;
+    java.lang.String name;
+}
+
+
+-keep class org.sqlite.database.sqlite.* {
+    native <methods>;
+}
+
+-keep class org.sqlite.database.sqlite.SQLiteDebug$PagerStats {
+    public *;
+    int *;
+}
+
+# because classes that implement java.sql.Driver tend to use reflection and
+# proguard doesn't play well with dynamic stuff
+-keep class * implements java.sql.Driver
+
+-dontwarn com.zaxxer.hikari.**
+
+-dontwarn javax.naming.InitialContext
+-dontwarn org.apache.log4j.**
+-dontwarn org.slf4j.**
+-keep public class org.sqldroid.**
+-keep public class org.sqlite.**
+-keep public class org.sqlite.os.**
+-keep public class org.sqlite.database.**
+-keep public class org.sqlite.database.sqlite.**
+-keep public class org.apache.log4j.**
+-keep class scala.slick.driver.JdbcProfile$Implicits

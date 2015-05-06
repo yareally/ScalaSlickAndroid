@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/libs/HikariCP-java6-2.3.7.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/config-1.2.1.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/libsqlite.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/reactive-streams-1.0.0.final.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/reactive-streams-1.0.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/scala-async_2.11-0.9.3.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/slf4j-api-1.6.4.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/slf4j-api-1.7.12.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/slf4j-nop-1.6.4.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/slick_2.11-3.0.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/sqldroid-1.0.3.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libs/sqldroid.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proguard-project.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/cc/AndroidSlick/DbHelpers.scala" charset="UTF-8" />
+  </component>
+</project>
