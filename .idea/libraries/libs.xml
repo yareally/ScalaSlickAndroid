@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/scala-async_2.11-0.9.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/config-1.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/slick_2.11-3.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/slf4j-nop-1.6.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/slf4j-api-1.6.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/reactive-streams-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../SignalInfoScala/libs/slick_2.11-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
